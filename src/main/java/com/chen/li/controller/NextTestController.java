@@ -23,8 +23,8 @@ public class NextTestController {
 	@Autowired
     NextTestService nextTestService;
 	
-	@RequestMapping(value="/nextText", method=RequestMethod.GET)
-	public String nextText(Locale locale, Model model) {
+	@RequestMapping(value="/nextTest", method=RequestMethod.GET)
+	public String nextTest(Locale locale, Model model) {
 		logger.info("Local is: {}", locale);
 		
 		Date date = new Date();
@@ -36,10 +36,10 @@ public class NextTestController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "nextText";
+		return "nextTest";
 	}
 	
-	@RequestMapping(value="/nextText", method=RequestMethod.POST)
+	@RequestMapping(value="/nextTest", method=RequestMethod.POST)
     public String add(NextTestBean formBean, Model model) throws Exception {
 //        ModelAndView mav = new ModelAndView("home");
         logger.info("NextTestBean: {}", formBean);
@@ -49,7 +49,7 @@ public class NextTestController {
 			// prepare model for rendering success message in this request
         logger.info("nextTestService is: {}", nextTestService);
         
-        nextTestService.hasNextTestMapper();
+//        nextTestService.hasNextTestMapper();
         nextTestService.add(formBean);
         
 		model.addAttribute("message", message);

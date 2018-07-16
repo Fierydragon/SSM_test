@@ -5,7 +5,7 @@
  
     <mapper namespace="com.chen.li.mapper.NextTestMapper">
         <insert id="add" parameterType="NextTestBean" >
-            insert into springmvc_test ( name ) values (#{name})   
+            insert into springmvc_test ( name, age, phoneNumber ) values (#{name}, #{age}, #{phoneNumber})   
         </insert>
          
         <delete id="delete" parameterType="NextTestBean" >

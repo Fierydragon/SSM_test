@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1> Next Text !!</h1>
+<h1> Next Test !!</h1>
 <P>  The time on the server is ${serverTime}. </P>
 
 <h1>Form test: </h1>

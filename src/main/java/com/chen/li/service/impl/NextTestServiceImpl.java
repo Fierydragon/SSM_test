@@ -1,6 +1,5 @@
 package com.chen.li.service.impl;
 
-import java.lang.reflect.Method;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +22,5 @@ public class NextTestServiceImpl implements NextTestService {
 	public void add(NextTestBean bean) {
 		// TODO Auto-generated method stub
 		nextTestMapper.add(bean);
-	}
-	
-	public void hasNextTestMapper() {
-		System.out.println("nextTestMapper: " + nextTestMapper);
-		Method[] declaredMethods = nextTestMapper.getClass().getDeclaredMethods();
-		System.out.println("Methods: ");
-		for (Method method : declaredMethods) {
-			System.out.println(method.getName());
-		}
 	}
 }

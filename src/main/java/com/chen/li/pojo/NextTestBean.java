@@ -1,10 +1,19 @@
 package com.chen.li.pojo;
 
 public class NextTestBean {
+	private int id;
 	private String name;
 	private int age;
 	private String phoneNumber;
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public int getAge() {
 		return age;
 	}
