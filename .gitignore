@@ -2,7 +2,8 @@
 .project
 .settings/
 .springBeans
-classes/*
+target/*
+
 
 # Compiled class file
 *.class
