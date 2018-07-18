@@ -8,10 +8,15 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	
+	<!-- 
+		1. Open annotation scan.
+		2. Annotation scan scope configuration. 
+	-->
    	<context:annotation-config />
     <context:component-scan base-package="com.chen.li" />
  
+ 	<!-- CONFIG DATA PERSISTENT LAYER -->
+ 	<!-- 1. Data source is needed -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
       <property name="driverClassName"> 
           <value>com.mysql.jdbc.Driver</value> 
@@ -27,12 +32,14 @@
       </property>    
     </bean>
      
+     <!-- 2. Mapping 'dataSource', pojo and xml files. -->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="typeAliasesPackage" value="com.chen.li.pojo" />
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
  
+ 	<!-- 3. Config mapper interfaces defined in java. -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.chen.li.mapper"/>
     </bean>

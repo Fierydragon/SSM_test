@@ -67,6 +67,7 @@
 		</dependency>	
 		
 		<!-- Logging -->
+		<!-- LogFactory which is a facade for logger modules(log4j etc.) -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

@@ -17,8 +17,9 @@ public class NextTestMapperTest {
 	
 	@BeforeClass
 	public static void init() {
-		ApplicationContext context = new ClassPathXmlApplicationContext("classpath*:src/test/java/com/chen/li/mybatis/mybatisTest.xml");//这里路径之前没有配对于是一直出错
+		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:mybatisTest.xml");//这里路径之前没有配对于是一直出错
 		nextTestService = (NextTestService)context.getBean("nextTestService");
+		
 	}
 	
 	@Test
